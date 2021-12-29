@@ -1,8 +1,9 @@
 from django.contrib import admin
-from django.urls import path,include,re_path
+from django.urls import path,include
 from . import views
 
 urlpatterns = [
-    re_path(r'^page1/', views.page1, name = "page1"),
-    re_path(r'^page2/', views.page2, name = "page2"),
+    path('', views.home, name = "home"),
+    path('page1/', views.app1page1, name = "app1page1"),
+    path('page2/', views.app1page2, name = "app1page2"),
 ]
