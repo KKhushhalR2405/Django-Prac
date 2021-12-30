@@ -9,3 +9,7 @@ def index(request):
         'details': allnames,
     }
     return render(request, 'index.html',context = content)
+
+
+def test1(request):
+    return HttpResponse("test url")
