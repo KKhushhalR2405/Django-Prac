@@ -1,8 +1,9 @@
 from django.shortcuts import render,HttpResponse
 from django.views.generic import (View,TemplateView,
-                                    ListView,DetailView)
+                                    ListView,DetailView,CreateView,
+                                    UpdateView,DeleteView)
 from . import models
-
+#..
 
 class IndexView(TemplateView):
     template_name = 'index.html'
@@ -17,3 +18,8 @@ class SchoolDetailView(DetailView):
     context_object_name = 'school_detail'
     model = models.School
     template_name = 'basic_app/school_details.html'
+
+
+class SchoolCreateView(CreateView):
+    fields = ('name','pricipal','location')
+    model = models.School
